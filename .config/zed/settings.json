@@ -7,6 +7,14 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -18,7 +26,7 @@
   },
   "ui_font_size": 16,
   "buffer_font_family": "Noto Sans Mono",
-  "buffer_font_size": 16,
+  "buffer_font_size": 14,
   "theme": {
     "mode": "dark",
     "light": "Danker Neon",
@@ -36,5 +44,29 @@
   },
   "project_panel": {
     "dock": "right"
+  },
+  "lsp": {
+    "discord_presence": {
+      "initialization_options": {
+        // Base URL for all language icons
+        "base_icons_url": "https://raw.githubusercontent.com/xhyrom/zed-discord-presence/main/assets/icons/",
+        "details": "",
+        "state": "Editing {filename}",
+        // URL for the large image
+        "large_image": "{base_icons_url}/{language}.png",
+        "large_text": "{language:u}", // :u capitalizes the first letter
+        // URL for the small image
+        "small_image": "{base_icons_url}/zed.png",
+        "small_text": "Zed",
+
+        // Rules to disable presence in specific workspaces
+        "rules": {
+          "mode": "blacklist", // Can also be "whitelist"
+          "paths": ["absolute path"]
+        },
+
+        "git_integration": true
+      }
+    }
   }
 }
